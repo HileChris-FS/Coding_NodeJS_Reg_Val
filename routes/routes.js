@@ -25,4 +25,12 @@ router.get("/projects",(req, res) => {
     });
 });
 
+router.get("/registration",(req, res) => {
+    res.render('registration', {
+        pagename: "Registration",
+    });
+});
+
+
+
 module.exports = router;

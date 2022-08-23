@@ -1,5 +1,6 @@
 const express = require("express");
 const router = require("../routes/routes");
+const validation = require("../validation/validation");
 const app = express();
 
 app.use(express.urlencoded({extended: true}));
@@ -25,6 +26,7 @@ app.use(express.static('public'));
 app.use(express.static('views'));
 
 app.use("/", router)
+app.use("/registration", validation)
 
 //error handling middleware
 app.use((req,res,next) => {
