@@ -19,46 +19,72 @@
         <%-include('includes/nav')%>
         <div class="container">
         <h1>Sign Up</h1>
+        <%if(typeof (errors) != "undefined"){%>
+            <p><%-errors.message%></p>
+            <% }%>
         <form action="/registration" method="post">
             <div>
             <label for="firstName" class="col-sm-2 col-form-label">Firstname</label>
             <input type="text" name="firstName">
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.firstNameMsg%></p>
+            <% }%>
             </div>
             <div >
             <label for="lastName" class="col-sm-2 col-form-label">Lastname</label>
-            <input type="text" >
+            <input type="text"  name="lastName"  >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.lastNameMsg%></p>
+        <% }%>
         </div>
         <div >
             <label for="address" class="col-sm-2 col-form-label">Address</label>
-            <input type="text" >
+            <input type="text" name="address" >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.addressMsg%></p>
+        <% }%>
         </div>
             <div >
             <label for="city" class="col-sm-2 col-form-label">City</label>
-            <input type="text" >
+            <input type="text"  name="city" >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.cityMsg%></p>
+        <% }%>
         </div>
             <div >
-            <label for="state" class="col-sm-2 col-form-label">State</label>
-            <input type="text" >
+            <label for="state" class="col-sm-2 col-form-label">State Abbreviation</label>
+            <input type="text"  name="state"  >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.stateMsg%></p>
+        <% }%>
         </div>
             <div >
             <label for="zip" class="col-sm-2 col-form-label">Zip</label>
-            <input type="number" >
-            <%if(errors != "undefined"){%>
-                    <p><%errors.zipMsg%></p>
+            <input type="text"  name="zip"  >
+            <%if(typeof (errors) != "undefined"){%>
+                    <p><%-errors.zipMsg%></p>
             <% }%>
-            
         </div>
             <div >
             <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <input type="email" >
+            <input type="email"  name="email" >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.emailMsg%></p>
+        <% }%>
         </div>
             <div >
             <label for="password" class="col-sm-2 col-form-label">Password</label>
-            <input type="text" >
+            <input type="password"  name="password" >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.passwordMsg%></p>
+        <%}%>
         </div>
             <div >
             <label for="cPassword" class="col-sm-2 col-form-label">Confirm Password</label>
-            <input type="text" >
+            <input type="password"  name="confirmPassword" >
+            <%if(typeof (errors) != "undefined"){%>
+                <p><%-errors.confirmPasswordMsg%></p>
+        <% }%>
         </div>
         <button type="submit" class="btn btn-dark btn-lg" >Register</button>
         </form>
